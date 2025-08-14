@@ -27,7 +27,7 @@ def main():
     unique_primary_business_activity_list = list(unique_primary_business_activity_set)
     
     # set up S3 connection
-    s3 = boto3.client("s3", endpoint_url = "http://localhost:4566")
+    s3 = boto3.client("s3", endpoint_url = "http://s3.localhost.localstack.cloud:4566")
 
     # save properties to s3 bucket
     s3.put_object(
