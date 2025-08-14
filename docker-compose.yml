@@ -1,12 +1,16 @@
 services:
   localstack:
-    image: localstack/localstack
+    image: localstack/localstack:latest
+    container_name: localstack_main
     ports:
-      - "4566:4566"
+      - "4566:4566" 
+      - "4510-4559:4510-4559"  # ports for lambda? idk open everything
     environment:
-      - SERVICES=s3,lambda,iam
+      - SERVICES=s3,lambda,iam,cloudwatch,logs,events
       - DEBUG=1
+      - LAMBDA_EXECUTOR=docker
       - DATA_DIR=/tmp/localstack/data
+      - LOCALSTACK_HOST=localhost
     volumes:
       - "./.localstack:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
