@@ -11,6 +11,6 @@ services:
       - LAMBDA_EXECUTOR=docker
       - LOCALSTACK_HOST=localhost
       # - DATA_DIR=/tmp/localstack/data
-    # volumes:
-    #   - "./.localstack:/tmp/localstack"
-    #   - "/var/run/docker.sock:/var/run/docker.sock"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      # - "./.localstack:/tmp/localstack"
