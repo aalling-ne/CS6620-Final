@@ -25,14 +25,6 @@ def main():
 
     # convert set to list so it can be serialized as json
     unique_primary_business_activity_list = list(unique_primary_business_activity_set)
-
-    # # save properties to file
-    # with open("data/properties.json", "w") as file:
-    #     json.dump(filtered, file, indent=2)
-
-    # # save activities to file
-    # with open("data/activities.json", "w") as file:
-    #     json.dump(unique_primary_business_activity_list, file, indent=2)
     
     # set up S3 connection
     s3 = boto3.client("s3", endpoint_url = "http://localhost:4566")
@@ -41,7 +33,7 @@ def main():
     s3.put_object(
         Bucket = os.environ["BUCKET_NAME"],
         Key = "data/properties.json",
-        Body = json.dump(filtered, indent=2),
+        Body = json.dumps(filtered, indent=2),
         ContentType="application/json"
     )
 
