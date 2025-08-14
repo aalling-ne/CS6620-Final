@@ -39,7 +39,7 @@ def main():
 
     # save activities to s3 bucket
     s3.put_object(
-        Bucket = "web_bucket",
+        Bucket = os.environ["BUCKET_NAME"],
         Key = "data/activities.json",
         Body = json.dumps(unique_primary_business_activity_list, indent=2),
         ContentType="application/json"
