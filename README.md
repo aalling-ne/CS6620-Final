@@ -12,17 +12,20 @@ Make sure you have the following installed:
 - Docker
 - Docker Compose
 - Terraform
-- Python 3+ with PIP
 
 Optional for manual testing:
 - AWS CLI via awscli-local
 
 ### 2. Download the repo
-```git clone https://github.com/aalling-ne/CS6620-Final```  
+```
+git clone https://github.com/aalling-ne/CS6620-Final
+```  
 then, navigate to the repository location.
 
 ### 3. Start LocalStack
-```docker-compose up```
+```
+docker-compose up
+```
 
 ### OPTIONAL - Manually Recreate Lambda Function ZIP
 The repository includes the Lambda Function script in a zip file with it's dependcies included.  
@@ -51,7 +54,9 @@ http://vacant-properties-web.s3-website.localhost.localstack.cloud:4566
 ### OPTIONAL - Test the ETL Script Manually
 
 With awslocal installed, you can invoke the Lambda Function manually, instead of waiting for the daily EventBridge Trigger.
-```awslocal lambda invoke --function-name vacant-properties-etl output.json```  
+```
+awslocal lambda invoke --function-name vacant-properties-etl output.json
+```  
 You can confirm the script ran succesfully by viewing the resulting file with `cat output.json`  
 
 ## Architecture
