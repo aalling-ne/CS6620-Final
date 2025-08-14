@@ -9,8 +9,8 @@ services:
       - SERVICES=s3,lambda,iam,cloudwatch,logs,events
       - DEBUG=1
       - LAMBDA_EXECUTOR=docker
-      - DATA_DIR=/tmp/localstack/data
       - LOCALSTACK_HOST=localhost
-    volumes:
-      - "./.localstack:/tmp/localstack"
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      # - DATA_DIR=/tmp/localstack/data
+    # volumes:
+    #   - "./.localstack:/tmp/localstack"
+    #   - "/var/run/docker.sock:/var/run/docker.sock"
