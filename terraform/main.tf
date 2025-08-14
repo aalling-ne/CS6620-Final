@@ -201,5 +201,5 @@ resource "aws_cloudwatch_event_target" "invoke_etl_lambda" {
   arn       = aws_lambda_function.etl_lambda.arn
 }
 
-#http://${aws_s3_bucket.website.bucket}.s3-website.localhost.localstack.cloud:4566
-#http://localhost:4566/${aws_s3_bucket.website.bucket}/index.html
+# Localstack Website URL
+#http://vacant-properties-web.s3-website.localhost.localstack.cloud:4566
