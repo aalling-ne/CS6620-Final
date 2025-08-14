@@ -166,6 +166,8 @@ resource "aws_lambda_function" "etl_lambda" {
   role          = aws_iam_role.iam_for_lambda.arn
   handler       = "etl_script.lambda_handler"
   runtime       = "python3.9"
+  timeout       = 60
+  memory_size   = 512
   filename      = "${path.module}/etl_package.zip"
   source_code_hash = filebase64sha256("${path.module}/etl_package.zip")
 
