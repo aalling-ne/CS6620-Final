@@ -4,6 +4,9 @@ This project retrieves vacant storefront data from the NYC Open Data API, proces
 
 The cloud infrastructure is fully provisioned with Terraform and is run entirely locally using LocalStack.
 
+### CS6620 - Final Project - Summer 2025
+Alexander Alling
+
 ## How to Run
 
 ### 1. Prerequisites
@@ -59,7 +62,7 @@ awslocal lambda invoke --function-name vacant-properties-etl output.json
 ```  
 You can confirm the script ran succesfully by viewing the resulting file with `cat output.json`  
 
-## Architecture
+## Infrastructure
 
 - LocalStack emulates AWS services in Docker container.
 - Terraform provisions all AWS resources inside LocalStack.
@@ -80,8 +83,9 @@ You can confirm the script ran succesfully by viewing the resulting file with `c
 `build_lambda.sh` - Shell script that creats etl_package.zip.  
 `docker-compose.yml` - Compose file that starts up LocalStack.  
 `etl_script.py` - Python script that is used as a Lambda Function for Extracting, Transforming, Loading the Vacant Property data.  
+`architecture-diagram.png` - The nice diagram above.  
 
-## Limitations
+## Limitations and Next Steps
 
 #### If this project were to be expanded upon for a real client, the resulting web application would be more useful if it could be used to filter for attributes such as:
 - Leasing Status (For Lease / For Sale / etc.)
